@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Científica</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="calculator">
+    <!-- Pantalla -->
+    <div class="display-container">
+      <div class="history-display" id="history"></div>
+      <div class="main-display" id="display">0</div>
+    </div>
+
+    <!-- Teclado -->
+    <div class="keypad">
+      <!-- Fila 1 -->
+      <button class="btn btn-func" onclick="appendFunc('sin(')">sin</button>
+      <button class="btn btn-func" onclick="appendFunc('cos(')">cos</button>
+      <button class="btn btn-func" onclick="appendFunc('tan(')">tan</button>
+      <button class="btn btn-func" onclick="appendFunc('log(')">log</button>
+      <button class="btn btn-func" onclick="appendFunc('ln(')">ln</button>
+
+      <!-- Fila 2 -->
+      <button class="btn btn-func" onclick="appendOp('^')">xⁿ</button>
+      <button class="btn btn-func" onclick="appendFunc('sqrt(')">√</button>
+      <button class="btn btn-func" onclick="appendFunc('(')">(</button>
+      <button class="btn btn-func" onclick="appendFunc(')')">)</button>
+      <button class="btn btn-func" onclick="appendValue('π')">π</button>
+
+      <!-- Fila 3 -->
+      <button class="btn btn-danger" onclick="clearAll()">AC</button>
+      <button class="btn btn-action" onclick="deleteLast()">DEL</button>
+      <button class="btn btn-func" onclick="appendValue('e')">e</button>
+      <button class="btn btn-func" onclick="appendOp('%')">%</button>
+      <button class="btn btn-op" onclick="appendOp('÷')">÷</button>
+
+      <!-- Fila 4 -->
+      <button class="btn" onclick="appendValue('7')">7</button>
+      <button class="btn" onclick="appendValue('8')">8</button>
+      <button class="btn" onclick="appendValue('9')">9</button>
+      <button class="btn btn-op" onclick="appendOp('×')">×</button>
+      <button class="btn btn-func" onclick="appendFunc('fact(')">n!</button>
+
+      <!-- Fila 5 -->
+      <button class="btn" onclick="appendValue('4')">4</button>
+      <button class="btn" onclick="appendValue('5')">5</button>
+      <button class="btn" onclick="appendValue('6')">6</button>
+      <button class="btn btn-op" onclick="appendOp('-')">-</button>
+      <button class="btn btn-func" onclick="appendFunc('abs(')">|x|</button>
+
+      <!-- Fila 6 -->
+      <button class="btn" onclick="appendValue('1')">1</button>
+      <button class="btn" onclick="appendValue('2')">2</button>
+      <button class="btn" onclick="appendValue('3')">3</button>
+      <button class="btn btn-op" onclick="appendOp('+')">+</button>
+      <button class="btn btn-func" onclick="toggleDegRad()" id="degRadBtn">DEG</button>
+
+      <!-- Fila 7 -->
+      <button class="btn" onclick="appendValue('0')">0</button>
+      <button class="btn" onclick="appendValue('.')">.</button>
+      <button class="btn btn-action" onclick="toggleSign()">±</button>
+      <button class="btn btn-equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
